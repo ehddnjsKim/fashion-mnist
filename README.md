@@ -19,8 +19,20 @@
 
 ## 3. 실행 방법
 
-### 3.1 모델 학습
+### 3.1 가상환경 생성 및 필수 패키지 설치
 
 ```bash
-python train_fashion_model.py
-```
+python -m venv venv              # 가상환경 생성
+source venv/bin/activate         # macOS / Linux
+venv\Scripts\activate            # Windows
+
+pip install torch torchvision fastapi gradio uvicorn
+
+## 3-2. 모델 학습
+```python train_fashion_model.py
+
+## 3-3. FaseAPI 서버 실행
+```uvicorn fashion_server:app --reload
+
+## 3-4. Gradio 웹 클라이언트 실행
+```python fashion_client.py
